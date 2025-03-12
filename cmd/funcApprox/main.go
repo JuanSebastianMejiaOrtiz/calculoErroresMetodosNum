@@ -9,12 +9,8 @@ func main() {
 	approxSin := func(x float64) float64 {
 		return x - math.Pow(x, 3)/6
 	}
-	x := []float64{1, 2, 3, 4, 5}
+	x := []float64{0.1, 0.3, 0.5, 1}
 
-    errorMagnitude, err := functionApproximation.ApproximationErrorFunction(x, math.Sin, approxSin)
-    if err != nil {
-        fmt.Printf("Error: %v", err)
-        return
-    }
+    errorMagnitude := functionApproximation.ApproximationErrorFunction(x, math.Sin, approxSin)
     fmt.Println(errorMagnitude)
 }
